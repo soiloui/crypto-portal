@@ -25,7 +25,7 @@ const SingleProject = (props) => {
 export async function getStaticPaths() {
   const client = await MyDB.connect();
 
-  const projectsCollection = MyDB.getProjectsCollection(client);
+  const projectsCollection = await MyDB.getProjectsCollection(client);
 
   const projects = await projectsCollection.find({}, { _id: 1 }).toArray();
   // fetch {} all objects, {_id: 1} but only id field
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: true, //if not all paths is defined, then it need be set to 'true'
+    fallback: false, //if not all paths is defined, then it need be set to 'true'
     paths: projects.map((project) => ({
       params: {
         projectId: project._id.toString(),
@@ -46,9 +46,8 @@ export async function getStaticProps(context) {
   const projectId = context.params.projectId; // get slug
 
   const client = await MyDB.connect();
-  const db = client.db();
 
-  const projectsCollection = db.collection("projects");
+  const projectsCollection = await MyDB.getProjectsCollection(client);
 
   const selectedProject = await projectsCollection.findOne({
     _id: ObjectId(projectId),
