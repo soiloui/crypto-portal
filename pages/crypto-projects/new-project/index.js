@@ -5,6 +5,8 @@ import NewProjectForm from "components/crypto-projects/NewProjectForm";
 import Message from "components/ui/Message";
 
 const NewProject = (props) => {
+  const router = useRouter();
+
   if (props.user) {
     const addProjectHandler = async (enteredProjectData) => {
       const response = await fetch("/api/new-project", {
@@ -19,7 +21,6 @@ const NewProject = (props) => {
 
       console.log(data);
 
-      const router = useRouter();
       router.push("/crypto-projects");
     };
 
