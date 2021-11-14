@@ -15,8 +15,10 @@ function ProjectItem(props) {
       </div>
       <div className={classes.content}>
         <h3>{props.name}</h3>
-        <p>{props.price}</p>
-        <p>{props.type}</p>
+        <div className={classes.basicInfo}>
+          <p className={classes.price}>Price: {props.price}</p>
+          <p className={classes.type}>Type: {props.type}</p>
+        </div>
       </div>
       <div className={classes.actions}>
         <button onClick={showDetailsHandler}>Show Details</button>

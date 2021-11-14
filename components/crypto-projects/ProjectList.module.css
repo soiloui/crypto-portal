@@ -1,3 +1,31 @@
+.section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section h2 {
+  color: #fff;
+}
+
+.section header a {
+  padding: 0.5em 1em;
+
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-secondary);
+  border: 1px solid transparent;
+
+  transition: all 0.22s ease-in-out;
+}
+.section header a:hover {
+  background: transparent;
+  border: 1px solid var(--color-secondary);
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;

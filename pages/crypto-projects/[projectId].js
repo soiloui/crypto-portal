@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, //if not all paths is defined, then it need be set to 'true'
+    fallback: "blocking", //if not all paths is defined, then it need be set to 'true'
     paths: projects.map((project) => ({
       params: {
         projectId: project._id.toString(),

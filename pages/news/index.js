@@ -3,7 +3,7 @@ import Link from "next/link";
 const News = () => {
   return (
     <>
-      <h1>News</h1>
+      <h2>News</h2>
       <ul>
         <li>
           <Link href="/news/nextjs-framework">NextJs Framework</Link>

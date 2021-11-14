@@ -1,6 +1,42 @@
-.section {
-  text-align: center;
+.summarySection {
+  display: flex;
 }
-.section img {
+.image {
+  padding: 2em;
+  width: 200px;
+
+  background: #fff;
+}
+.image img {
   width: 100%;
+}
+.generalInfo {
+  margin-left: 2em;
+}
+.summarySection p {
+  font-size: 1.4rem;
+}
+.summarySection .name {
+  margin-bottom: 0.5em;
+
+  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+
+  border-bottom: 3px solid var(--color-primary);
+}
+.price {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.descriptionSection {
+  margin-top: 3em;
+}
+
+.descriptionSection h3 {
+  font-size: 1.5rem;
+  /* color: var(--color-secondary); */
+  border-bottom: 1px solid var(--color-secondary);
 }

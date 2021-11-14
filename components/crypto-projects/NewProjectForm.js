@@ -1,6 +1,4 @@
 import { useRef } from "react";
-
-import Card from "../ui/Card";
 import classes from "./NewProjectForm.module.css";
 
 function NewProjectForm(props) {
@@ -31,38 +29,36 @@ function NewProjectForm(props) {
   }
 
   return (
-    <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
-        <div className={classes.control}>
-          <label htmlFor="name">Project Name</label>
-          <input type="text" required id="name" ref={nameInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="image">Project Image</label>
-          <input type="url" required id="image" ref={imageInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="price">Price</label>
-          <input type="text" required id="price" ref={priceInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="type">Type</label>
-          <input type="text" required id="type" ref={typeInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="description">Description</label>
-          <textarea
-            id="description"
-            required
-            rows="5"
-            ref={descriptionInputRef}
-          ></textarea>
-        </div>
-        <div className={classes.actions}>
-          <button>Add Project</button>
-        </div>
-      </form>
-    </Card>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <div className={classes.control}>
+        <label htmlFor="name">Project Name</label>
+        <input type="text" required id="name" ref={nameInputRef} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor="image">Project Image</label>
+        <input type="url" required id="image" ref={imageInputRef} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor="price">Price</label>
+        <input type="text" required id="price" ref={priceInputRef} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor="type">Type</label>
+        <input type="text" required id="type" ref={typeInputRef} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          required
+          rows="5"
+          ref={descriptionInputRef}
+        ></textarea>
+      </div>
+      <div className={classes.actions}>
+        <button>Add Project</button>
+      </div>
+    </form>
   );
 }
 
